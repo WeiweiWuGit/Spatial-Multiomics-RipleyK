@@ -1,5 +1,5 @@
 
-# Repository: Ripley's K Based Statistics for RNA-Protein Colocalization Analysis
+# Ripley's K Based Statistics for RNA-Protein Colocalization Analysis
 
 ## Overview
 
@@ -53,12 +53,13 @@ This project uses publicly available 10x Visium data for melanoma [Human Melanom
 
 ### Data Preparation
 
-`data_preparation.py` formats and preprocesses raw data from 10x Visium suitable for Ripley's K calculations. This script processes raw data from `data/raw/` and outputs to `data/processed/`.
+`data_preparation.py` formats and preprocesses raw demo data from 10x Visium suitable for Ripley's K calculations. This script processes raw data from `data/raw/` and outputs to `data/processed/`, making it suitable for Ripley's K calculations.
 
 ### Functions: calculate_RipleyK( ) and RipleyK_statistic( )
 
-- **calculate_RipleyK( )**: Computes both weighted and unweighted Ripley's K values using data from `data/processed/`.  
-  **Parameters**:
+- **calculate_RipleyK( )**: Computes both weighted and unweighted Ripley's K values for multiple RNAs and one protein.  
+
+  **Parameters**:  
   - `x`, `y` (array): Arrays of x and y coordinates that represent the spatial locations of each observation point.
   - `protein_weights` (array): An array where each element corresponds to the weight (importance) of the protein measurement at the respective spatial location.
   - `gene_matrix` (array): A matrix containing gene expression data, where each row corresponds to a spatial location and each column to a different gene.
@@ -69,9 +70,11 @@ This project uses publicly available 10x Visium data for melanoma [Human Melanom
   - `return_df` (bool): Determines whether the function returns a pandas DataFrame (if `True`) or a numpy array (if `False`).
   - `gene_names` (list of str, optional): Custom labels for genes in the output; if not provided, genes are named based on their column indices in `gene_matrix`.
   
-  
-- **RipleyK_statistic( )**: Calculates Ripley's K-based statistic to quantify RNA-Protein colocalization using data output from `calculate_RipleyK( )`.  
-  **Parameters**:
+\   
+
+- **RipleyK_statistic( )**: Calculates Ripley's K-based statistic to quantify colocalization of multiple RNAs and one protein using data output from `calculate_RipleyK( )`.  
+
+  **Parameters**:  
   - `weighted_RipleyK` (DataFrame): A pandas DataFrame containing the Ripley's K values computed with weighting, indexed by radius.
   - `unweighted_RipleyK` (DataFrame): A pandas DataFrame containing the Ripley's K values computed without weighting, also indexed by radius.
   - `radius_low` (int): The minimum radius value to include in the analysis, filtering out any results below this threshold.
@@ -79,4 +82,4 @@ This project uses publicly available 10x Visium data for melanoma [Human Melanom
 
 ### Demonstration
 
-Refer to `use_functions.py` for examples on how to integrate and use these functions with the example data provided. This script will guide you through executing the functions and viewing the results.
+Refer to `use_functions.py` for examples on how to integrate and use these functions with the example data provided. This script will guide you through executing the functions and viewing the results. The preprocessed data used here is located at `data/processed/`.
