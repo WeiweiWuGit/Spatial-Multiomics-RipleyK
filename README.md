@@ -47,7 +47,7 @@ Ensure that the script and data paths are set correctly, according to the projec
 
 ## Demo Data
 
-This project uses publicly available 10x Visium data for melanoma [Human Melanoma, IF Stained (FFPE)](https://www.10xgenomics.com/datasets/human-melanoma-if-stained-ffpe-2-standard), which includes spatial gene expression profiles. The raw demo data are downloaded from the 10x Genomics website and provided in the `data/raw/` directory includes processed files used directly for analysis.
+This project uses publicly available 10x Visium data for melanoma [Human Melanoma, IF Stained (FFPE)](https://www.10xgenomics.com/datasets/human-melanoma-if-stained-ffpe-2-standard), which includes spatial gene expression profiles. The raw demo data are downloaded from the 10x Genomics website and provided in the `data/raw/` directory.  
 
 ## Usage
 
