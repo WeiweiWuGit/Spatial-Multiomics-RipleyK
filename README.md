@@ -1,5 +1,5 @@
 
-# Ripley's K Based Statistics for RNA-Protein Colocalization Analysis
+# Ripley's K Based Statistic for RNA-Protein Colocalization Analysis
 
 ## Overview
 
@@ -70,7 +70,8 @@ This project uses publicly available 10x Visium data for melanoma [Human Melanom
   - `return_df` (bool): Determines whether the function returns a pandas DataFrame (if `True`) or a numpy array (if `False`).
   - `gene_names` (list of str, optional): Custom labels for genes in the output; if not provided, genes are named based on their column indices in `gene_matrix`.
   
-\   
+   
+   
 
 - **RipleyK_statistic( )**: Calculates Ripley's K-based statistic to quantify colocalization of multiple RNAs and one protein using data output from `calculate_RipleyK( )`.  
 
